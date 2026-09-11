@@ -37,6 +37,7 @@ public class LogOutputTest {
     public void appLogsGreeting() {
         App.main(new String[0]);
 
+        // 標準出力やファイル出力の appender ではなく、テスト用 appender に対して検証する。
         assertEquals(1, appender.list.size());
         ILoggingEvent event = appender.list.get(0);
         assertEquals(Level.INFO, event.getLevel());
